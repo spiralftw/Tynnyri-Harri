@@ -8,7 +8,7 @@ load_dotenv()
 
 intents = discord.Intents.all()
 client = discord.Client(command_prefix="!", intents = intents)
-token = os.getenv('TOKEN')
+token = os.getenv('DISCORD_TOKEN')
 
 @client.event
 async def on_ready():
@@ -19,7 +19,7 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if "homo" in message.content:
-        await message.channel.send("ite oot homo")
+    if "on" in message.content:
+        await message.channel.send("ON!")
 
 client.run(token)
